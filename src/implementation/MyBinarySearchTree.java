@@ -182,4 +182,13 @@ public class MyBinarySearchTree<E extends Comparable<E>> {
     private int comapre(E deletingElement, Node<E> temp) {
         return deletingElement.compareTo(temp.getData());
     }
+    public int height(Node<E> node){
+        //base condition
+        if(node == null){
+            return -1;
+        }
+        else{
+            return 1 + Math.max(height(node.getLeft()), height(node.getRight()));
+        }
+    }
 }
